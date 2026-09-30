@@ -3,7 +3,7 @@ services:
     name: voice-agent
     runtime: python
     plan: free
-    buildCommand: 'true'
+    buildCommand: pip install -r requirements.txt
     startCommand: python deployment/browser/server.py
     envVars:
       # sync: false is what makes Render prompt for a value during Blueprint
