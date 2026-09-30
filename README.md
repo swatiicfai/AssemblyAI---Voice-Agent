@@ -14,7 +14,6 @@
 
 ## 🌍 Live Demo Links
 
-- **Vercel Production (Voice Agent API + Next.js App):** [https://assemblyai-voice-agent.vercel.app](https://assemblyai-voice-agent.vercel.app) *(Requires API Key Config)*
 - **Native Builder Mobile App UI (Disaster Report Hub):** [https://c0wme2t9c9cfku83yqo5roibf.nativelyai.app](https://c0wme2t9c9cfku83yqo5roibf.nativelyai.app)
 - **Demo Video:** See our Lablab.ai submission for the full visual demo of the agent answering calls and plotting real-time Leaflet maps!
 
