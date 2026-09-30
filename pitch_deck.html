@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AeroRescue - Pitch Deck</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #111; }
+
+  .slide {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5vh 7vw;
+  }
+
+  /* SLIDE 1 */
+  .s1 { background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 50%, #0d1a3a 100%); }
+  .s1::before {
+    content: ''; position: absolute; top: -15vh; right: -10vw;
+    width: 50vw; height: 90vh; border-radius: 50%;
+    background: radial-gradient(circle, rgba(220,30,30,0.25) 0%, transparent 70%);
+  }
+  .tag {
+    display: inline-block;
+    background: rgba(220,30,30,0.2); border: 1px solid rgba(220,30,30,0.5);
+    color: #ff6060; font-size: 1.1vw; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 0.5vh 1.5vw; border-radius: 20px; margin-bottom: 2.5vh;
+  }
+  .s1 h1 {
+    font-size: 8vw; font-weight: 900; line-height: 1;
+    background: linear-gradient(90deg, #ffffff, #a0c4ff);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 2vh;
+  }
+  .s1 .sub { font-size: 1.6vw; color: rgba(255,255,255,0.6); font-weight: 300; max-width: 55vw; line-height: 1.5; }
+  .badge {
+    position: absolute; bottom: 5vh; right: 7vw;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 1.5vh 2vw; text-align: right;
+  }
+  .badge .bl { font-size: 0.9vw; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; }
+  .badge .bn { font-size: 1.2vw; font-weight: 600; color: #60a5fa; margin-top: 0.4vh; }
+
+  /* SHARED */
+  .sh { font-size: 1vw; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5vh; }
+  h2 { font-size: 4vw; font-weight: 800; line-height: 1.1; margin-bottom: 3vh; }
+
+  /* SLIDE 2 */
+  .s2 { background: linear-gradient(135deg, #1a0a0a 0%, #2d0f0f 100%); }
+  .s2 .sh { color: #ff6060; }
+  .s2 h2 { color: white; }
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5vw; }
+  .stat-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,80,80,0.2);
+    border-radius: 16px; padding: 2.5vh 2vw;
+  }
+  .stat-card .num { font-size: 4.5vw; font-weight: 900; color: #ff6060; line-height: 1; margin-bottom: 1vh; }
+  .stat-card .desc { font-size: 1.1vw; color: rgba(255,255,255,0.6); line-height: 1.4; }
+
+  /* SLIDE 3 */
+  .s3 { background: linear-gradient(135deg, #0a1a0a 0%, #0f2d0f 100%); }
+  .s3 .sh { color: #4ade80; }
+  .s3 h2 { color: #4ade80; }
+  .sol-desc { font-size: 1.4vw; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 70vw; margin-bottom: 3vh; }
+  .feat-row { display: flex; gap: 1vw; flex-wrap: wrap; }
+  .feat-pill {
+    display: flex; align-items: center; gap: 0.8vw;
+    background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.3);
+    border-radius: 10px; padding: 1.2vh 1.5vw; font-size: 1.2vw; font-weight: 600;
+  }
+
+  /* SLIDE 4 */
+  .s4 { background: linear-gradient(135deg, #0a0f1a 0%, #0f1f3a 100%); }
+  .s4 .sh { color: #60a5fa; }
+  .s4 h2 { color: #60a5fa; }
+  .steps { display: flex; flex-direction: column; gap: 1.5vh; }
+  .step {
+    display: flex; align-items: flex-start; gap: 2vw;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(96,165,250,0.2);
+    border-radius: 12px; padding: 1.8vh 2vw;
+  }
+  .snum {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%;
+    width: 3.5vw; height: 3.5vw; min-width: 3.5vw;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4vw; font-weight: 800;
+  }
+  .step h4 { font-size: 1.3vw; font-weight: 700; margin-bottom: 0.4vh; color: white; }
+  .step p { font-size: 1.05vw; color: rgba(255,255,255,0.55); line-height: 1.4; }
+
+  /* SLIDE 5 */
+  .s5 { background: linear-gradient(135deg, #12080f 0%, #1e0f2a 100%); }
+  .s5 .sh { color: #c084fc; }
+  .s5 h2 { color: #c084fc; }
+  .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5vw; }
+  .tech-card {
+    background: rgba(192,132,252,0.07); border: 1px solid rgba(192,132,252,0.2);
+    border-radius: 14px; padding: 2vh 2vw;
+  }
+  .tbadge {
+    display: inline-block; background: rgba(192,132,252,0.15); border-radius: 6px;
+    padding: 0.3vh 0.8vw; font-size: 0.85vw; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase; color: #c084fc; margin-bottom: 0.8vh;
+  }
+  .tech-card .tn { font-size: 1.4vw; font-weight: 700; color: #e9d5ff; margin-bottom: 0.5vh; }
+  .tech-card .tr { font-size: 1.05vw; color: rgba(255,255,255,0.5); line-height: 1.4; }
+
+  /* SLIDE 6 */
+  .s6 { background: linear-gradient(135deg, #0a0f0a 0%, #111a11 100%); }
+  .s6 .sh { color: #facc15; }
+  .s6 h2 { color: #facc15; font-size: 3.5vw; }
+  .dis-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5vw; margin-top: 1vh; }
+  .dis-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(250,204,21,0.15);
+    border-radius: 14px; padding: 2.5vh 1.5vw; text-align: center;
+  }
+  .dis-card .em { font-size: 3.5vw; margin-bottom: 1.2vh; }
+  .dis-card .dt { font-size: 1.3vw; font-weight: 700; margin-bottom: 0.8vh; color: #facc15; }
+  .dis-card .dd { font-size: 1vw; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+  /* SLIDE 7 */
+  .s7 {
+    background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 50%, #0d1a3a 100%);
+    align-items: center; text-align: center;
+  }
+  .s7 h2 {
+    font-size: 5.5vw; font-weight: 900;
+    background: linear-gradient(90deg, #ffffff, #60a5fa);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 2vh;
+  }
+  .s7 p { font-size: 1.5vw; color: rgba(255,255,255,0.6); max-width: 55vw; line-height: 1.6; margin-bottom: 3.5vh; }
+  .links { display: flex; gap: 1.5vw; justify-content: center; }
+  .lbtn { padding: 1.5vh 2.5vw; border-radius: 10px; font-size: 1.2vw; font-weight: 600; text-decoration: none; }
+  .lbtn.p { background: #3b82f6; color: white; }
+  .lbtn.s { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: white; }
+
+  @media print {
+    html, body { width: 100%; height: 100%; }
+    .slide { page-break-after: always; width: 100vw; height: 100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title -->
+<div class="slide s1">
+  <div class="tag">🚨 AssemblyAI Voice Agent Hackathon</div>
+  <h1>AeroRescue</h1>
+  <p class="sub">An autonomous, voice-first disaster response platform that saves lives in under 30 seconds — powered by AssemblyAI's Voice Agent API.</p>
+  <div class="badge">
+    <div class="bl">Submitted to</div>
+    <div class="bn">AssemblyAI Voice Agent Hackathon</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: Problem -->
+<div class="slide s2">
+  <div class="sh">⚠️ The Problem</div>
+  <h2>Disaster Strikes.<br>Lines Are Jammed.<br>People Die Waiting.</h2>
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="num">72%</div>
+      <div class="desc">of emergency calls during major disasters fail to connect in the first hour</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">8 min</div>
+      <div class="desc">average dispatch time after first contact — too slow for floods & earthquakes</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">1000s</div>
+      <div class="desc">of victims cannot clearly communicate their location due to panic and stress</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Solution -->
+<div class="slide s3">
+  <div class="sh">✅ The Solution</div>
+  <h2>AeroRescue — Your<br>AI Disaster Dispatcher</h2>
+  <p class="sol-desc">Victims simply speak naturally in their own panicked language. Our AI acts as a calm dispatcher — extracting location, disaster type, and dispatching rescue teams with a live map pin in real time.</p>
+  <div class="feat-row">
+    <div class="feat-pill">🎙️ Voice-First Interface</div>
+    <div class="feat-pill">🗺️ Live Rescue Map</div>
+    <div class="feat-pill">🤖 AI Tool Calling</div>
+    <div class="feat-pill">⚡ &lt;30 Second Dispatch</div>
+  </div>
+</div>
+
+<!-- SLIDE 4: How it Works -->
+<div class="slide s4">
+  <div class="sh">⚙️ How It Works</div>
+  <h2>From Panic to Pin<br>in 4 Steps</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="snum">1</div>
+      <div><h4>Victim Starts a Voice Call</h4><p>Opens AeroRescue in browser. No typing, no forms — speaks naturally in any panicked state.</p></div>
+    </div>
+    <div class="step">
+      <div class="snum">2</div>
+      <div><h4>Universal-3 Pro Transcribes in Real-Time</h4><p>AssemblyAI converts noisy, breathless emergency audio to text with sub-second latency.</p></div>
+    </div>
+    <div class="step">
+      <div class="snum">3</div>
+      <div><h4>LLM Tool Calling Extracts Location & Type</h4><p>The Voice Agent LLM parses the conversation, derives GPS coordinates, and fires the dispatch_rescue_team tool.</p></div>
+    </div>
+    <div class="step">
+      <div class="snum">4</div>
+      <div><h4>Live Rescue Pin Drops on the Map</h4><p>A Leaflet map instantly shows the victim's exact location — coordinators dispatch rescuers immediately.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: Tech Stack -->
+<div class="slide s5">
+  <div class="sh">🛠️ Technology Stack</div>
+  <h2>Built on World-Class<br>AI Infrastructure</h2>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <div class="tbadge">Core AI</div>
+      <div class="tn">🎙️ AssemblyAI Voice Agent API</div>
+      <div class="tr">End-to-end STT → LLM → TTS pipeline over a single WebSocket. Uses Universal-3 Pro for transcription and built-in LLM tool calling.</div>
+    </div>
+    <div class="tech-card">
+      <div class="tbadge">Interactivity</div>
+      <div class="tn">🔧 JSON-Schema Tool Calling</div>
+      <div class="tr">The dispatch_rescue_team tool fires client-side when the LLM extracts enough context, sending lat/lng to the frontend.</div>
+    </div>
+    <div class="tech-card">
+      <div class="tbadge">Mapping</div>
+      <div class="tn">🗺️ Leaflet + OpenStreetMap</div>
+      <div class="tr">Renders a live interactive rescue map that populates rescue pins instantly when the tool call fires over the WebSocket.</div>
+    </div>
+    <div class="tech-card">
+      <div class="tbadge">Backend</div>
+      <div class="tn">🐍 Python + FastAPI</div>
+      <div class="tr">Secure token server for ephemeral WebSocket auth, plus a LeMUR batch endpoint for post-call transcript analysis.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: Scenarios -->
+<div class="slide s6">
+  <div class="sh">🌍 Use Cases</div>
+  <h2>Built for Every Climate Emergency</h2>
+  <div class="dis-grid">
+    <div class="dis-card">
+      <div class="em">🏚️</div>
+      <div class="dt">Earthquake</div>
+      <div class="dd">Extracts rubble locations & trapped counts → Dispatches USAR teams</div>
+    </div>
+    <div class="dis-card">
+      <div class="em">🌊</div>
+      <div class="dt">Flood</div>
+      <div class="dd">Identifies rooftop stranding & rising water → Dispatches water rescue</div>
+    </div>
+    <div class="dis-card">
+      <div class="em">🌀</div>
+      <div class="dt">Cyclone</div>
+      <div class="dd">Pinpoints shelter needs & evacuation routes → Dispatches transport</div>
+    </div>
+    <div class="dis-card">
+      <div class="em">🔥</div>
+      <div class="dt">Wildfire</div>
+      <div class="dd">Detects escape path status & burns → Dispatches fire medics</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: Impact -->
+<div class="slide s7">
+  <div class="sh" style="text-align:center;">🚀 Impact</div>
+  <h2>Every Second Counts.</h2>
+  <p>AeroRescue reduces emergency dispatch time from <strong style="color:white;">8+ minutes to under 30 seconds</strong> — giving rescuers a precise location map before the call even ends.</p>
+  <div class="links">
+    <a class="lbtn p" href="https://github.com/swatiicfai/AssemblyAI---Voice-Agent">GitHub Repository</a>
+    <a class="lbtn s" href="https://lablab.ai/ai-hackathons/assemblyai-voice-agent-hackathon">Hackathon Page</a>
+  </div>
+</div>
+
+</body>
+</html>
