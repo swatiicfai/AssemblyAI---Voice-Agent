@@ -19,6 +19,17 @@
 
 ---
 
+## 🏆 Hackathon Judging Criteria Alignment
+
+We built AeroRescue specifically to hit the core judging pillars of the AssemblyAI Voice Agent Hackathon:
+
+1. **Degree of Completion:** We delivered a fully functional, end-to-end Python backend and web frontend that successfully handles two-way Voice Agent WebSocket communication, dynamic tool configuration, and live map plotting.
+2. **Technical Complexity:** We heavily integrated **Tool Calling**. The LLM dynamically extracts geographic entities from the transcript, structures them into a JSON payload, and triggers a client-side Leaflet mapping function in real-time.
+3. **Originality & Use Case:** While most Voice Agents are used for customer support or sales, AeroRescue leverages Universal-3's low latency to handle high-stress, high-noise emergency environments where typing is impossible but talking is life-saving.
+4. **Presentation:** Our submission includes a 7-slide pitch deck outlining the market need, architecture, and impact, alongside a visual demo video proving the real-time tool calling functionality.
+
+---
+
 ## 🚑 The Solution & Core Workflow
 
 During a disaster, emergency phone lines are jammed and victims are panicked. AeroRescue bridges the gap between panicked victims and rescue dispatchers in less than 30 seconds:
@@ -36,7 +47,6 @@ During a disaster, emergency phone lines are jammed and victims are panicked. Ae
 *   **JSON-Schema Tool Calling:** We heavily utilize the Voice Agent's tool-calling capabilities to trigger client-side mapping functions based on conversational context.
 *   **Leaflet & OpenStreetMap:** Renders the interactive, real-time rescue dispatch map on the frontend.
 *   **Python Server:** A lightweight server (`server.py`) using the official AssemblyAI Python SDK to generate ephemeral tokens and serve the client securely.
-*   **Vercel / FastAPI:** Refactored backend routes for serverless cloud deployment.
 
 ---
 
