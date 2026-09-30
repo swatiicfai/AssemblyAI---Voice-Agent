@@ -13,9 +13,9 @@ services:
         sync: false
       # Which agents/<name>.jsonc the service publishes on boot.
       - key: AGENT
-        value: minimal
+        value: aerorescue
       # Paste an id from your .env here to serve that exact agent. Left empty,
       # the service publishes AGENT itself and reuses the agent of the same
       # name on later restarts.
       - key: AGENT_ID
-        value: ''
+        value: 'agent_eb3c4beb51554059b1f09f91257c028d'
