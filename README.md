@@ -1,4 +1,4 @@
-# 🚁 AeroRescue – Real-Time Disaster Needs Dispatch
+# 🚨 AeroRescue — Real-Time Disaster Needs Dispatch
 
 ![AeroRescue Cover Banner](aerorescue_cover.jpg)
 
@@ -12,7 +12,15 @@
 
 ---
 
-## 🚀 The Solution & Core Workflow
+## 🌍 Live Demo Links
+
+- **Vercel Production (Voice Agent API + Next.js App):** [https://assemblyai-voice-agent.vercel.app](https://assemblyai-voice-agent.vercel.app) *(Requires API Key Config)*
+- **Native Builder Mobile App UI (Disaster Report Hub):** [https://c0wme2t9c9cfku83yqo5roibf.nativelyai.app](https://c0wme2t9c9cfku83yqo5roibf.nativelyai.app)
+- **Demo Video:** See our Lablab.ai submission for the full visual demo of the agent answering calls and plotting real-time Leaflet maps!
+
+---
+
+## 🚑 The Solution & Core Workflow
 
 During a disaster, emergency phone lines are jammed and victims are panicked. AeroRescue bridges the gap between panicked victims and rescue dispatchers in less than 30 seconds:
 
@@ -29,18 +37,19 @@ During a disaster, emergency phone lines are jammed and victims are panicked. Ae
 *   **JSON-Schema Tool Calling:** We heavily utilize the Voice Agent's tool-calling capabilities to trigger client-side mapping functions based on conversational context.
 *   **Leaflet & OpenStreetMap:** Renders the interactive, real-time rescue dispatch map on the frontend.
 *   **Python Server:** A lightweight server (`server.py`) using the official AssemblyAI Python SDK to generate ephemeral tokens and serve the client securely.
+*   **Vercel / FastAPI:** Refactored backend routes for serverless cloud deployment.
 
 ---
 
-## 📍 Supported Disaster Scenarios
+## 🌪️ Supported Disaster Scenarios
 
 AeroRescue is engineered to parse different needs profiles across four major climate emergency categories:
 
 | Disaster Type | Primary Hazards | Core AI Extraction Target | Primary Dispatch Unit |
 | :--- | :--- | :--- | :--- |
-| 🏚️ **Earthquake** | Structural collapse, gas leaks, trapped victims | Rubble location, trapped counts, injury severity | USAR Search & Rescue |
+| 🚨 **Earthquake** | Structural collapse, gas leaks, trapped victims | Rubble location, trapped counts, injury severity | USAR Search & Rescue |
 | 🌊 **Rain & Flood** | Rising floodwaters, submerged homes | Stranded level (roof/attic), boat requirements | Water Rescue & Boats |
-| 🌀 **Cyclone** | High winds, destroyed shelters, power loss | Evacuation route safety, shelter allocations | Evacuation Transport |
+| 🌪️ **Cyclone** | High winds, destroyed shelters, power loss | Evacuation route safety, shelter allocations | Evacuation Transport |
 | 🔥 **Wildfire** | Rapidly shifting fire perimeters, smoke | Escape path clearance, oxygen & burn priority | Fire Response & Medics |
 
 ---
